@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ClickCounter from "./ClickCounter";
 import Counter from "./Counter";
 
 export default class App extends Component {
@@ -6,6 +7,7 @@ export default class App extends Component {
     return (
       <div>
         <Counter incrementBy={1} interval={1000} />
+        <ClickCounter />
       </div>
     );
   }
