@@ -7,7 +7,7 @@ export default class App extends Component {
     return (
       <div>
         <Hello />
-        <Welcome name={"John"} age={35} />
+        <Welcome name={"John"} age={26} />
       </div>
     );
   }
