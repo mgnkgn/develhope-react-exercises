@@ -8,12 +8,12 @@ export default class Counter extends Component {
     this.state = {
       count: 0,
     };
-
+  }
+  componentDidMount() {
     setInterval(() => {
       this.setState({ count: this.state.count + this.props.incrementBy });
     }, this.props.interval);
   }
-
   render() {
     return (
       <h1>
