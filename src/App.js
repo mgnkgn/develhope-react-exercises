@@ -5,7 +5,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Counter />
+        <Counter incrementBy={1} interval={1000} />
       </div>
     );
   }
