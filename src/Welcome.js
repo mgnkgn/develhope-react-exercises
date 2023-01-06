@@ -5,3 +5,7 @@ export default class Welcome extends Component {
     return <p>Welcome, {this.props.name}</p>;
   }
 }
+
+Welcome.defaultProps = {
+  name: "Jack",
+};
