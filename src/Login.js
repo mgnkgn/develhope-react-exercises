@@ -34,6 +34,16 @@ export default class Login extends Component {
       };
     });
   }
+  resetHandler(event) {
+    event.preventDefault();
+    this.setState((state) => {
+      return {
+        name: "",
+        password: "",
+        remember: false,
+      };
+    });
+  }
   render() {
     return (
       <div>
@@ -64,6 +74,7 @@ export default class Login extends Component {
               Login
             </button>
           }
+          <button onClick={this.resetHandler.bind(this)}>Reset</button>
         </form>
         <div>Name: {this.state.name}</div>
         <div>Password: {this.state.password}</div>
