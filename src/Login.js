@@ -62,7 +62,7 @@ export default class Login extends Component {
           />
           <input
             type="checkbox"
-            value={"Remember me"}
+            value="Remember me"
             checked={this.state.remember}
             onChange={this.handleCheck.bind(this)}
           />

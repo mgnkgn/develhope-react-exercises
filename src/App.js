@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import InteractiveWelcome from "./InteractiveWelcome";
 import Login from "./Login";
+import UncontrolledLogin from "./UncontrolledLogin";
 
 export default class App extends Component {
   loginHandler(event) {
@@ -12,7 +13,8 @@ export default class App extends Component {
     return (
       <div>
         {/* <InteractiveWelcome /> */}
-        <Login onLogin={this.loginHandler.bind(this)} />
+        {/* <Login onLogin={this.loginHandler.bind(this)} /> */}
+        <UncontrolledLogin />
       </div>
     );
   }
