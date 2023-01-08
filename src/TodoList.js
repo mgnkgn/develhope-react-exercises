@@ -24,6 +24,15 @@ export default class TodoList extends Component {
     });
     this._formRef.current.elements.todo.value = "";
   };
+
+  resetHandler = (event) => {
+    event.preventDefault();
+    this.setState((state) => {
+      return {
+        items: [],
+      };
+    });
+  };
   render() {
     return (
       <>
@@ -34,6 +43,7 @@ export default class TodoList extends Component {
         >
           <input type="text" name="todo" />
           <button type="submit">Enter Todo</button>
+          <button onClick={this.resetHandler.bind(this)}>Reset</button>
         </form>
         <ul>
           {this.state.items.map((item) => (
