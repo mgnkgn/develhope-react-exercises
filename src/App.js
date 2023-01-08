@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-
-import InteractiveWelcome from "./InteractiveWelcome";
-import Login from "./Login";
-import UncontrolledLogin from "./UncontrolledLogin";
+import TodoList from "./TodoList";
 
 export default class App extends Component {
   loginHandler(event) {
@@ -12,9 +9,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        {/* <InteractiveWelcome /> */}
-        {/* <Login onLogin={this.loginHandler.bind(this)} /> */}
-        <UncontrolledLogin />
+        <TodoList />
       </div>
     );
   }
