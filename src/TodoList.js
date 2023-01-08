@@ -5,15 +5,22 @@ export default class TodoList extends Component {
     super(props);
 
     this.state = {
-      items: ["Todo1", "Todo2", "Todo3", "Todo4", "Todo5"],
+      items: [{ value: "Todo1", id: 110 }],
     };
   }
   _formRef = React.createRef();
   submitHandler = (event) => {
     event.preventDefault();
     console.log(this._formRef.current.elements.todo.value);
-    const newTodo = this._formRef.current.elements.todo.value;
-    if (this.state.items.includes(newTodo)) {
+    const newTodo = {
+      value: this._formRef.current.elements.todo.value,
+      id: Math.random() * 100,
+    };
+    const existingTodo = this.state.items.find(
+      (item) => item.value === newTodo.value
+    );
+
+    if (existingTodo) {
       alert("You already added this todo 🐸");
       return;
     }
@@ -33,6 +40,14 @@ export default class TodoList extends Component {
       };
     });
   };
+
+  removeHandler = (id) => {
+    this.setState((state) => {
+      return {
+        items: this.state.items.filter((item) => item.id !== id),
+      };
+    });
+  };
   render() {
     return (
       <>
@@ -47,8 +62,14 @@ export default class TodoList extends Component {
         </form>
         <ul>
           {this.state.items.map((item) => (
-            <li key={this.state.items.length - this.state.items.indexOf(item)}>
-              {item}
+            <li key={item.id}>
+              {item.value}
+              <button
+                id={item.id}
+                onClick={this.removeHandler.bind(this, item.id)}
+              >
+                Remove Todo
+              </button>
             </li>
           ))}
         </ul>
