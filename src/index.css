@@ -1,0 +1,13 @@
+.welcome {
+  background: orangered;
+  border: 2px solid black;
+}
+
+.btn-warning {
+  background: red;
+  border: black;
+}
+.btn-valid {
+  background: limegreen;
+  border: purple;
+}

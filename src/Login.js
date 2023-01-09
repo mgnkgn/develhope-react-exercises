@@ -8,6 +8,7 @@ export default class Login extends Component {
       name: "",
       password: "",
       remember: false,
+      invClass: "",
     };
   }
 
@@ -20,11 +21,22 @@ export default class Login extends Component {
   }
 
   handlePassword(event) {
-    this.setState((state) => {
-      return {
-        password: event.target.value,
-      };
-    });
+    const enteredPass = event.target.value;
+    if (enteredPass.length <= 8) {
+      this.setState((state) => {
+        return {
+          password: event.target.value,
+          invClass: "btn-warning",
+        };
+      });
+    } else {
+      this.setState((state) => {
+        return {
+          password: event.target.value,
+          invClass: "btn-valid",
+        };
+      });
+    }
   }
 
   handleCheck(event) {
@@ -60,13 +72,16 @@ export default class Login extends Component {
             <button
               disabled={!this.state.name || !this.state.password}
               onClick={this.props.onLogin.bind(this)}
+              className={this.state.invClass}
             >
               Login
             </button>
           }
         </form>
         <div>Name: {this.state.name}</div>
-        <div>Password: {this.state.password}</div>
+        <div>
+          Password: {this.state.password.length > 8 ? this.state.password : ""}
+        </div>
         <div>Remember Me: {" " + this.state.remember}</div>
       </div>
     );
