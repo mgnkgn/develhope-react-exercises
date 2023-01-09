@@ -13,6 +13,7 @@
 }
 
 .container {
+  padding: 10px;
   background: white;
-  border: red;
+  border: 2px solid red;
 }
