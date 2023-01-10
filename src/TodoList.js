@@ -61,7 +61,8 @@ export default class TodoList extends Component {
           <button onClick={this.resetHandler.bind(this)}>Reset</button>
         </form>
         <ul>
-          {this.state.items.map((item) => (
+          {this.props.render(this.state.items, this.removeHandler)}
+          {/* {this.state.items.map((item) => (
             <li key={item.id}>
               {item.value}
               <button
@@ -71,7 +72,7 @@ export default class TodoList extends Component {
                 Remove Todo
               </button>
             </li>
-          ))}
+          ))} */}
         </ul>
       </>
     );

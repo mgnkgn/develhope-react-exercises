@@ -6,10 +6,20 @@ export default class App extends Component {
     event.preventDefault();
     console.log("Login successful.");
   }
+  renderHandler(array, removeFnc) {
+    return array.map((item) => (
+      <li key={item.id}>
+        {item.value}
+        <button id={item.id} onClick={removeFnc.bind(this, item.id)}>
+          Remove Todo
+        </button>
+      </li>
+    ));
+  }
   render() {
     return (
       <div>
-        <TodoList />
+        <TodoList render={this.renderHandler} />
       </div>
     );
   }
