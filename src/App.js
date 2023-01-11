@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import DisplayLanguage from "./DisplayLanguage";
 import Welcome from "./Welcome";
 import Sum from "./Sum";
+import ClickCounter from "./ClickCounter";
 
 export default class App extends Component {
   loginHandler(event) {
@@ -27,6 +28,7 @@ export default class App extends Component {
         {/* <DisplayLanguage /> */}
         <Welcome name={"Mauro"} />
         <Sum />
+        <ClickCounter />
       </div>
     );
   }
