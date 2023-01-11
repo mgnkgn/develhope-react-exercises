@@ -26,7 +26,7 @@ export default class App extends Component {
         {/* <TodoList render={this.renderHandler} /> */}
         {/* <DisplayLanguage /> */}
         <Welcome name={"Mauro"} />
-        <Sum numbers={this.numbersArray} />
+        <Sum />
       </div>
     );
   }
