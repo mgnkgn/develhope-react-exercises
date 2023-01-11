@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import TodoList from "./TodoList";
+
 import DisplayLanguage from "./DisplayLanguage";
+import Welcome from "./Welcome";
 
 export default class App extends Component {
   loginHandler(event) {
@@ -21,7 +22,8 @@ export default class App extends Component {
     return (
       <div>
         {/* <TodoList render={this.renderHandler} /> */}
-        <DisplayLanguage />
+        {/* <DisplayLanguage /> */}
+        <Welcome name={"Mauro"} />
       </div>
     );
   }
