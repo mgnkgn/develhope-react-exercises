@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import DisplayLanguage from "./DisplayLanguage";
 import Welcome from "./Welcome";
+import Sum from "./Sum";
 
 export default class App extends Component {
   loginHandler(event) {
@@ -18,12 +19,14 @@ export default class App extends Component {
       </li>
     ));
   }
+  numbersArray = [1, 2, 3, 4, 5];
   render() {
     return (
       <div>
         {/* <TodoList render={this.renderHandler} /> */}
         {/* <DisplayLanguage /> */}
         <Welcome name={"Mauro"} />
+        <Sum numbers={this.numbersArray} />
       </div>
     );
   }
