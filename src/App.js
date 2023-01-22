@@ -5,6 +5,7 @@ import Welcome from "./Welcome";
 import Sum from "./Sum";
 import ClickCounter from "./ClickCounter";
 import Login from "./Login";
+import Counter from "./Counter";
 
 const App = () => {
   const onCounterChange = (counter) => {
@@ -12,8 +13,9 @@ const App = () => {
   };
   return (
     <div>
-      <ClickCounter onCounterChange={onCounterChange} />
       {/* <Login /> */}
+      {/* <ClickCounter onCounterChange={onCounterChange} /> */}
+      <Counter />
     </div>
   );
 };
