@@ -6,6 +6,7 @@ import Sum from "./Sum";
 import ClickCounter from "./ClickCounter";
 import Login from "./Login";
 import Counter from "./Counter";
+import GithubUser from "./GithubUser";
 
 const App = () => {
   const onCounterChange = (counter) => {
@@ -15,7 +16,8 @@ const App = () => {
     <div>
       {/* <Login /> */}
       {/* <ClickCounter onCounterChange={onCounterChange} /> */}
-      <Counter />
+      {/* <Counter /> */}
+      <GithubUser name={"mgnkgn"} />
     </div>
   );
 };
