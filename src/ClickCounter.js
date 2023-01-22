@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const ClickCounter = () => {
+const ClickCounter = (props) => {
   const [counter, setCounter] = useState(0);
   const counterHandler = () => {
     setCounter((state) => {
       return state + 1;
     });
   };
+
+  useEffect(() => {
+    props.onCounterChange(counter);
+  }, [counter]);
+
   return (
     <div>
       Current count: {counter}
