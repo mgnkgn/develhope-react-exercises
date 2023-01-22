@@ -26,9 +26,14 @@ const GithubUser = (props) => {
         alignItems: "center",
         justifyContent: "space-around",
         width: "350px",
+        border: "2.5px solid whitesmoke",
+        margin: "10px",
+        padding: "15px 3.5px",
       }}
     >
-      <div>Username: {username} </div>
+      <div>
+        Username for {props.name}: {username}{" "}
+      </div>
       <img
         src={`${imgUrl}`}
         alt="user-avatar"
@@ -38,7 +43,7 @@ const GithubUser = (props) => {
           borderRadius: "50%",
         }}
       />{" "}
-      <div>
+      <div style={{ border: "1px dashed royalblue", padding: "7.5px" }}>
         Go to the profile:{" "}
         <a href={`${link}`} target="_blank">
           {link}
