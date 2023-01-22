@@ -4,6 +4,7 @@ import DisplayLanguage from "./DisplayLanguage";
 import Welcome from "./Welcome";
 import Sum from "./Sum";
 import ClickCounter from "./ClickCounter";
+import Login from "./Login";
 
 export default class App extends Component {
   loginHandler(event) {
@@ -27,8 +28,9 @@ export default class App extends Component {
         {/* <TodoList render={this.renderHandler} /> */}
         {/* <DisplayLanguage /> */}
         <Welcome name={"Mauro"} />
-        <Sum />
-        <ClickCounter />
+        {/* <Sum /> */}
+        {/* <ClickCounter /> */}
+        <Login />
       </div>
     );
   }
