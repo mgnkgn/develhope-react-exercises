@@ -25,12 +25,12 @@ const App = () => {
         {/* <Counter /> */}
         {/* <GithubUser name={"mgnkgn"} /> */}
         {/* <GithubUsersList /> */}
-        {/* <div>
-        Current count: {count} / <button onClick={incrementCount}>+</button> /
-        <button onClick={decrementCount}>-</button> /
-        <button onClick={resetCount}>Reset</button>
-      </div>
-    <Form /> */}
+        <div>
+          Current count: {count} / <button onClick={incrementCount}>+</button> /
+          <button onClick={decrementCount}>-</button> /
+          <button onClick={resetCount}>Reset</button>
+        </div>
+        {/* <Form /> */}
         {/* <CarDetails /> */}
       </div>
       <DisplayLangFunc />
