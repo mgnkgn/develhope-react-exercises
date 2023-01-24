@@ -8,18 +8,26 @@ import Login from "./Login";
 import Counter from "./Counter";
 import GithubUser from "./GithubUser";
 import GithubUsersList from "./GithubUsersList";
+import UseCounter from "./UseCounter";
 
 const App = () => {
   const onCounterChange = (counter) => {
     console.log(`Current counter is ${counter}`);
   };
+
+  const { count, decrementCount, incrementCount, resetCount } = UseCounter();
   return (
     <div>
       {/* <Login /> */}
       {/* <ClickCounter onCounterChange={onCounterChange} /> */}
       {/* <Counter /> */}
       {/* <GithubUser name={"mgnkgn"} /> */}
-      <GithubUsersList />
+      {/* <GithubUsersList /> */}
+      <div>
+        Current count: {count} / <button onClick={incrementCount}>+</button> /
+        <button onClick={decrementCount}>-</button> /
+        <button onClick={resetCount}>Reset</button>
+      </div>
     </div>
   );
 };
