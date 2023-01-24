@@ -10,6 +10,7 @@ import GithubUser from "./GithubUser";
 import GithubUsersList from "./GithubUsersList";
 import UseCounter from "./UseCounter";
 import Form from "./Form";
+import CarDetails from "./CarDetails";
 
 const App = () => {
   const onCounterChange = (counter) => {
@@ -23,13 +24,14 @@ const App = () => {
       {/* <ClickCounter onCounterChange={onCounterChange} /> */}
       {/* <Counter /> */}
       {/* <GithubUser name={"mgnkgn"} /> */}
-      <GithubUsersList />
+      {/* <GithubUsersList /> */}
       {/* <div>
         Current count: {count} / <button onClick={incrementCount}>+</button> /
         <button onClick={decrementCount}>-</button> /
         <button onClick={resetCount}>Reset</button>
       </div>
       <Form /> */}
+      <CarDetails />
     </div>
   );
 };
