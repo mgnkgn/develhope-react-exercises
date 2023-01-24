@@ -1,23 +1,25 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import UseGithub from "./UseGithub";
 
 const GithubUser = (props) => {
-  const [username, setUsername] = useState();
-  const [imgUrl, setImgUrl] = useState();
-  const [link, setLink] = useState();
-  useEffect(() => {
-    const fetchData = async (username) => {
-      const data = await fetch(`https://api.github.com/users/${username}`);
+  const { username, imgUrl, link } = UseGithub(props.name);
+  // const [username, setUsername] = useState();
+  // const [imgUrl, setImgUrl] = useState();
+  // const [link, setLink] = useState();
+  // useEffect(() => {
+  //   const fetchData = async (username) => {
+  //     const data = await fetch(`https://api.github.com/users/${username}`);
 
-      const resolvedData = await data.json();
-      console.log(resolvedData);
-      setUsername(resolvedData.name);
-      setImgUrl(resolvedData.avatar_url);
-      setLink(resolvedData.html_url);
-    };
+  //     const resolvedData = await data.json();
+  //     console.log(resolvedData);
+  //     setUsername(resolvedData.name);
+  //     setImgUrl(resolvedData.avatar_url);
+  //     setLink(resolvedData.html_url);
+  //   };
 
-    fetchData(props.name);
-  }, []);
+  //   fetchData(props.name);
+  // }, []);
   return (
     <div
       style={{

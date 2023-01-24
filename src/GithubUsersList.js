@@ -9,8 +9,8 @@ const GithubUsersList = () => {
     "weierophinney",
     "christkv",
   ];
-  const resultedList = usersArray.map((el) => {
-    return <GithubUser name={`${el}`} />;
+  const resultedList = usersArray.map((el, i) => {
+    return <GithubUser name={`${el}`} key={`${el}-${i}`} />;
   });
   return <div>{resultedList}</div>;
 };
