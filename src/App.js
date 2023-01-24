@@ -13,9 +13,19 @@ import Form from "./Form";
 import CarDetails from "./CarDetails";
 import { LanguageCtxProvider } from "./LanguageCtx";
 import DisplayLangFunc from "./DisplayLangFunc";
+import FilteredList from "./FilteredList";
 
 const App = () => {
   const { count, decrementCount, incrementCount, resetCount } = UseCounter();
+
+  const arrayToBeFiltered = [
+    { name: "Mauro", id: 99, age: 29 },
+    { name: "Dries", id: 10, age: 35 },
+    { name: "Fernando", id: 1, age: 34 },
+    { name: "Christine", id: 110, age: 33 },
+    { name: "Ciro", id: 1100, age: 7 },
+    { name: "Leo", id: 30, age: 18 },
+  ];
 
   return (
     <LanguageCtxProvider>
@@ -25,15 +35,16 @@ const App = () => {
         {/* <Counter /> */}
         {/* <GithubUser name={"mgnkgn"} /> */}
         {/* <GithubUsersList /> */}
-        <div>
+        {/* <div>
           Current count: {count} / <button onClick={incrementCount}>+</button> /
           <button onClick={decrementCount}>-</button> /
           <button onClick={resetCount}>Reset</button>
-        </div>
+        </div> */}
         {/* <Form /> */}
         {/* <CarDetails /> */}
       </div>
-      <DisplayLangFunc />
+      {/* <DisplayLangFunc /> */}
+      <FilteredList people={arrayToBeFiltered} />
     </LanguageCtxProvider>
   );
 };
