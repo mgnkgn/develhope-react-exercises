@@ -9,6 +9,7 @@ import Counter from "./Counter";
 import GithubUser from "./GithubUser";
 import GithubUsersList from "./GithubUsersList";
 import UseCounter from "./UseCounter";
+import Form from "./Form";
 
 const App = () => {
   const onCounterChange = (counter) => {
@@ -28,6 +29,7 @@ const App = () => {
         <button onClick={decrementCount}>-</button> /
         <button onClick={resetCount}>Reset</button>
       </div>
+      <Form />
     </div>
   );
 };
