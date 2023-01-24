@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 
 import DisplayLanguage from "./DisplayLanguage";
 import Welcome from "./Welcome";
@@ -11,28 +11,30 @@ import GithubUsersList from "./GithubUsersList";
 import UseCounter from "./UseCounter";
 import Form from "./Form";
 import CarDetails from "./CarDetails";
+import { LanguageCtxProvider } from "./LanguageCtx";
+import DisplayLangFunc from "./DisplayLangFunc";
 
 const App = () => {
-  const onCounterChange = (counter) => {
-    console.log(`Current counter is ${counter}`);
-  };
-
   const { count, decrementCount, incrementCount, resetCount } = UseCounter();
+
   return (
-    <div>
-      {/* <Login /> */}
-      {/* <ClickCounter onCounterChange={onCounterChange} /> */}
-      {/* <Counter /> */}
-      {/* <GithubUser name={"mgnkgn"} /> */}
-      {/* <GithubUsersList /> */}
-      {/* <div>
+    <LanguageCtxProvider>
+      <div>
+        {/* <Login /> */}
+        {/* <ClickCounter onCounterChange={onCounterChange} /> */}
+        {/* <Counter /> */}
+        {/* <GithubUser name={"mgnkgn"} /> */}
+        {/* <GithubUsersList /> */}
+        {/* <div>
         Current count: {count} / <button onClick={incrementCount}>+</button> /
         <button onClick={decrementCount}>-</button> /
         <button onClick={resetCount}>Reset</button>
       </div>
-      <Form /> */}
-      <CarDetails />
-    </div>
+    <Form /> */}
+        {/* <CarDetails /> */}
+      </div>
+      <DisplayLangFunc />
+    </LanguageCtxProvider>
   );
 };
 
