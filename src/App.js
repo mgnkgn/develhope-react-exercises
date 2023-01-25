@@ -1,5 +1,5 @@
 import React, { Component, useContext } from "react";
-import { Route, Routes, useParams } from "react-router-dom";
+import { Route, Routes, useParams, Link } from "react-router-dom";
 
 import DisplayLanguage from "./DisplayLanguage";
 import Welcome from "./Welcome";
@@ -36,6 +36,23 @@ const App = () => {
         <Route
           exact
           path="/"
+          element={
+            <nav
+              style={{
+                display: "flex",
+                width: "350px",
+                justifyContent: "space-around",
+              }}
+            >
+              <Link to="/welcome">Welcome Page</Link>
+              <Link to="/counter">Counter Page</Link>
+              <Link to="/users/mgnkgn">Github Profile</Link>
+            </nav>
+          }
+        />
+
+        <Route
+          path="/people"
           element={<FilteredList people={arrayToBeFiltered} />}
         />
         <Route path="/welcome" element={<Welcome name={"Mauro"} />} />
