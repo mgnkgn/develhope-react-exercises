@@ -1,5 +1,5 @@
 import React, { Component, useContext } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 
 import DisplayLanguage from "./DisplayLanguage";
 import Welcome from "./Welcome";
@@ -15,8 +15,10 @@ import CarDetails from "./CarDetails";
 import { LanguageCtxProvider } from "./LanguageCtx";
 import DisplayLangFunc from "./DisplayLangFunc";
 import FilteredList from "./FilteredList";
+import ShowGithubUser from "./ShowGithubUser";
 
 const App = () => {
+  const { username } = useParams();
   const { count, decrementCount, incrementCount, resetCount } = UseCounter();
 
   const arrayToBeFiltered = [
@@ -38,6 +40,7 @@ const App = () => {
         />
         <Route path="/welcome" element={<Welcome name={"Mauro"} />} />
         <Route path="/counter" element={<Counter />} />
+        <Route path="users/:username" element={<ShowGithubUser />} />
 
         {/* <Login /> */}
         {/* <ClickCounter onCounterChange={onCounterChange} /> */}
