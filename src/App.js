@@ -1,4 +1,5 @@
 import React, { Component, useContext } from "react";
+import { Route, Routes } from "react-router-dom";
 
 import DisplayLanguage from "./DisplayLanguage";
 import Welcome from "./Welcome";
@@ -29,7 +30,14 @@ const App = () => {
 
   return (
     <LanguageCtxProvider>
-      <div>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={<FilteredList people={arrayToBeFiltered} />}
+        />
+        <Route path="/welcome" element={<Welcome name={"Mauro"} />} />
+
         {/* <Login /> */}
         {/* <ClickCounter onCounterChange={onCounterChange} /> */}
         {/* <Counter /> */}
@@ -42,9 +50,8 @@ const App = () => {
         </div> */}
         {/* <Form /> */}
         {/* <CarDetails /> */}
-      </div>
-      {/* <DisplayLangFunc /> */}
-      <FilteredList people={arrayToBeFiltered} />
+        {/* <DisplayLangFunc /> */}
+      </Routes>
     </LanguageCtxProvider>
   );
 };
