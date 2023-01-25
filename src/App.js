@@ -16,6 +16,7 @@ import { LanguageCtxProvider } from "./LanguageCtx";
 import DisplayLangFunc from "./DisplayLangFunc";
 import FilteredList from "./FilteredList";
 import ShowGithubUser from "./ShowGithubUser";
+import NotFound from "./NotFound";
 
 const App = () => {
   const { username } = useParams();
@@ -58,6 +59,7 @@ const App = () => {
         <Route path="/welcome" element={<Welcome name={"Mauro"} />} />
         <Route path="/counter" element={<Counter />} />
         <Route path="users/:username" element={<ShowGithubUser />} />
+        <Route path="*" element={<NotFound />} />
 
         {/* <Login /> */}
         {/* <ClickCounter onCounterChange={onCounterChange} /> */}
