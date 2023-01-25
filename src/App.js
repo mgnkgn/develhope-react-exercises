@@ -37,6 +37,7 @@ const App = () => {
           element={<FilteredList people={arrayToBeFiltered} />}
         />
         <Route path="/welcome" element={<Welcome name={"Mauro"} />} />
+        <Route path="/counter" element={<Counter />} />
 
         {/* <Login /> */}
         {/* <ClickCounter onCounterChange={onCounterChange} /> */}
