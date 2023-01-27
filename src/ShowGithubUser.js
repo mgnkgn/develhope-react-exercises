@@ -7,7 +7,7 @@ import GithubUser from "./GithubUser";
 const ShowGithubUser = (props) => {
   const { username } = useParams();
   useEffect(() => {}, [username]);
-  console.log(username);
+
   return (
     <div>
       <GithubUser name={username} />

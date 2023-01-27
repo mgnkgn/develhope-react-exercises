@@ -4,23 +4,7 @@ import UseGithub from "./UseGithub";
 
 const GithubUser = (props) => {
   const { data, error, loading } = UseGithub(props.name);
-  console.log(data);
-  // const [username, setUsername] = useState();
-  // const [imgUrl, setImgUrl] = useState();
-  // const [link, setLink] = useState();
-  // useEffect(() => {
-  //   const fetchData = async (username) => {
-  //     const data = await fetch(`https://api.github.com/users/${username}`);
 
-  //     const resolvedData = await data.json();
-  //     console.log(resolvedData);
-  //     setUsername(resolvedData.name);
-  //     setImgUrl(resolvedData.avatar_url);
-  //     setLink(resolvedData.html_url);
-  //   };
-
-  //   fetchData(props.name);
-  // }, []);
   return (
     <div
       style={{

@@ -4,12 +4,8 @@ import useSWR from "swr";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const UseGithub = (receivedName) => {
-  // const [username, setUsername] = useState();
-  // const [imgUrl, setImgUrl] = useState();
-  // const [loading, setLoading] = useState(false);
-  // const [link, setLink] = useState();
   const { data, error } = useSWR(
-    `https://api.github.com/users/${receivedName}`,
+    receivedName ? `https://api.github.com/users/${receivedName}` : null,
     fetcher
   );
 
