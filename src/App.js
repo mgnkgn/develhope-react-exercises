@@ -47,6 +47,7 @@ const App = () => {
             >
               <Link to="/welcome">Welcome Page</Link>
               <Link to="/counter">Counter Page</Link>
+              <Link to="/users">Users</Link>
               <Link to="/users/mgnkgn">Github Profile</Link>
             </nav>
           }

@@ -3,9 +3,8 @@ import { useState } from "react";
 import UseGithub from "./UseGithub";
 
 const GithubUser = (props) => {
-  const { username, imgUrl, link, loading, error, fetchData } = UseGithub(
-    props.name
-  );
+  const { data, error, loading } = UseGithub(props.name);
+  console.log(data);
   // const [username, setUsername] = useState();
   // const [imgUrl, setImgUrl] = useState();
   // const [link, setLink] = useState();
@@ -38,10 +37,10 @@ const GithubUser = (props) => {
       {!loading && !error && (
         <>
           <div>
-            Username for {props.name}: {username}{" "}
+            Username for {props.name}: {data.name}{" "}
           </div>
           <img
-            src={`${imgUrl}`}
+            src={`${data.avatar_url}`}
             alt="user-avatar"
             style={{
               width: "120px",
@@ -51,8 +50,8 @@ const GithubUser = (props) => {
           />{" "}
           <div style={{ border: "1px dashed royalblue", padding: "7.5px" }}>
             Go to the profile:{" "}
-            <a href={`${link}`} target="_blank">
-              {link}
+            <a href={`${data.html_url}`} target="_blank">
+              {"link"}
             </a>
           </div>
         </>
