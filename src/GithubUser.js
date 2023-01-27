@@ -17,7 +17,7 @@ const GithubUser = (props) => {
     };
 
     fetchData(props.name);
-  }, []);
+  }, [props.name]);
   return (
     <div
       style={{

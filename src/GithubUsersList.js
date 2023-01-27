@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import GithubUser from "./GithubUser";
 
 const GithubUsersList = () => {
+  const userRef = useRef();
   const usersArray = [
     "mgnkgn",
     "visionmedia",
@@ -9,10 +10,31 @@ const GithubUsersList = () => {
     "weierophinney",
     "christkv",
   ];
-  const resultedList = usersArray.map((el) => {
+  const [usersList, setUsersList] = useState(usersArray);
+
+  const resultedList = usersList.map((el) => {
     return <GithubUser name={`${el}`} />;
   });
-  return <div>{resultedList}</div>;
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const enteredUser = userRef.current.value;
+    setUsersList((prevState) => [enteredUser, ...prevState]);
+  };
+
+  return (
+    <div>
+      <form onSubmit={submitHandler}>
+        <input type="text" ref={userRef} />
+        <button type="submit">Fetch User</button>
+      </form>
+      <div>
+        {usersList.map((el, i) => {
+          return <GithubUser name={`${el}`} key={i} />;
+        })}
+      </div>
+    </div>
+  );
 };
 
 export default GithubUsersList;
