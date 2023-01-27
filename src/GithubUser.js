@@ -3,7 +3,7 @@ import { useState } from "react";
 import UseGithub from "./UseGithub";
 
 const GithubUser = (props) => {
-  const { data, error, loading } = UseGithub(props.name);
+  const { data, error, loading, refetch } = UseGithub(props.name);
 
   return (
     <div
@@ -42,6 +42,7 @@ const GithubUser = (props) => {
       )}
       {!loading && error && <>{error}</>}
       {loading && <div>Loading...</div>}
+      <button onClick={refetch}>Refetch</button>
     </div>
   );
 };
